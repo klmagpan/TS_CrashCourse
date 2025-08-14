@@ -45,7 +45,7 @@ export class dataPacket {
         return JSON.stringify({ "value": this.value, "time": this.time, "sensorId": this.sensorId });
     }
 
-    static getRandom(min: number, max: number): number {
+    static getRandom(min: number, max: number): number { // Generate random value for data
         const multiplier = Math.pow(10, dataPacket.DECIMAL_PLACES);
 
         const randomShifted = Math.floor(Math.random() * (max - min + 1) * multiplier) + min * multiplier;
@@ -53,7 +53,7 @@ export class dataPacket {
         return randomShifted / multiplier;
     }
 
-    static simulatePacket(): dataPacket {
+    static simulatePacket(): dataPacket { // dataPacket: name of the class
         return new dataPacket("12345", new Date().getTime(), dataPacket.getRandom(dataPacket.MIN_TEMP, dataPacket.MAX_TEMP));
     }
 }

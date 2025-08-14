@@ -1,5 +1,5 @@
 let p = require('./Person');
-let test = require('tape');
+let test = require('tape'); // Unit Testing module
 
 test('Reasonably valued age', function (t) {
     t.plan(5);
@@ -18,7 +18,7 @@ test('Reasonably valued age', function (t) {
 });
 
 test ('Person age setter', function(t){
-    t.plan(1);
+    t.plan(1); // How many assertions expected
 
     const happy = new p.Person("Chris", 16);
 
@@ -27,6 +27,7 @@ test ('Person age setter', function(t){
     // don't need this anymore because of TypeScript typing
     // t.throws(() => new p.Person("Gracie", "Sixteen"), new Error('That value \'Sixteen\' is not a number.'), "Should throw not a number error");
 
+    // Guarantees an exception thrown
     t.throws(() => new p.Person("Who?", -99), new Error('That value \'-99\' is not a valid age.'), "Should throw an invalid age error");
 }
 )

@@ -1,14 +1,14 @@
 import * as WebSocket from 'ws' 
-const dp = require('../shared/dataPacket');
+const dp = require('../shared/dataPacket'); // Requires external library
 
-const PORT = 2112;
+const PORT = 2112; // Opens web port socket 2112
 
 const wss = new WebSocket.Server({ port: PORT });
 
 wss.on('connection', (ws) => {
     console.log('Client connected');
 
-  const intervalId = setInterval(() => {
+  const intervalId = setInterval(() => { // Sends simulated data packet
       ws.send(dp.dataPacket.simulatePacket().toString());
   }, 1000);
 

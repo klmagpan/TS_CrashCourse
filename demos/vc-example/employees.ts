@@ -1,5 +1,5 @@
 class Employee {
-    constructor(firstName: string, lastName: string, employeeId: string) {
+    constructor(firstName: string, lastName: string, employeeId: string) { // Added type declarations
         this.firstName = firstName;
         this.lastName = lastName;
         this.employeeId = employeeId;
@@ -16,7 +16,7 @@ class Employee {
 
 document.addEventListener("DOMContentLoaded", function () {
 	const employees = [
-		new Employee("John", "Doe", "1"),
+		new Employee("John", "Doe", "1"), // Corrected arr<string>
 		new Employee("Jane", "Smith", "2"),
 		new Employee("Bob", "Johnson", "3")
 	];
